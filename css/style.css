@@ -1,6 +1,7 @@
 :root {
   --primary-text-color: #212121;
   --secondary-text-color: #757575;
+
   --accent-color: #2196f3;
   --secondary-accent-color: #188ce8;
   --primary-white-color: #ffffff;
@@ -15,8 +16,28 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 .list {
   list-style: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
 }
 
 .link {
@@ -36,9 +57,34 @@ body {
   margin: -1px;
 }
 
+.container {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  /* outline: 2px solid red; */
+}
+/* -----------------------------------------------HEADER-------------------------------------------------- */
+
+.container-nav {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  /* outline: 2px solid red; */
+}
+
 /* -----------------------------------------------LOGO-------------------------------------------------- */
 
-.logo-accent {
+.header-logo {
+  padding-top: 24px;
+  padding-bottom: 25px;
+  margin-right: 93px;
+}
+
+.header .logo-accent {
   color: var(--primary-text-color);
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
@@ -47,8 +93,25 @@ body {
   letter-spacing: 0.03em;
 }
 
-.header-logo,
 .footer-logo {
+  color: var(--accent-color);
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.19;
+  letter-spacing: 0.03em;
+}
+
+.footer .logo-accent {
+  color: var(--primary-white-color);
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.19;
+  letter-spacing: 0.03em;
+}
+
+.header-logo {
   color: var(--accent-color);
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
@@ -59,15 +122,31 @@ body {
 
 .header-logo:hover,
 .header-logo:focus {
-  color: var(--primary-text-color);
+  color: var(--accent-color);
 }
 
 .footer-logo:hover,
 .footer-logo:focus {
-  color: var(--primary-text-color);
+  color: var(--accent-color);
 }
 
-/* -----------------------------------------------SIYE-NAV-------------------------------------------------- */
+.logo-accent:hover,
+.logo-accent:hover {
+  color: var(--accent-color);
+}
+
+/* -----------------------------------------------SITE-NAV-------------------------------------------------- */
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.header .container-nav {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ececec;
+}
 
 .header-link {
   color: var(--primary-text-color);
@@ -75,6 +154,12 @@ body {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+  padding-bottom: 32px;
+  padding-top: 32px;
+}
+
+.header-items:not(:last-child) {
+  margin-right: 50px;
 }
 
 .header-link:hover,
@@ -86,12 +171,19 @@ body {
   color: var(--accent-color);
 }
 
+.header-contacts {
+  margin-left: auto;
+}
+
 .header-mail {
   color: var(--secondary-text-color);
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+  padding-bottom: 32px;
+  padding-top: 32px;
+  margin-right: 50px;
 }
 
 .header-tel {
@@ -100,6 +192,8 @@ body {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+  padding-bottom: 32px;
+  padding-top: 32px;
 }
 
 .header-mail:hover,
@@ -113,14 +207,22 @@ body {
 }
 
 /* -----------------------------------------------HERO-------------------------------------------------- */
+
+.hero {
+  background: var(--footer-bg-color);
+  text-align: center;
+  padding: 200px 0;
+}
+
 .hero-title {
   color: var(--primary-white-color);
-  background-color: #2f303a;
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
-  text-align: center;
   letter-spacing: 0.06em;
+  width: 696px;
+  margin: 0 auto;
+  margin-bottom: 30px;
   text-transform: uppercase;
 }
 
@@ -128,12 +230,30 @@ body {
   color: var(--primary-white-color);
   font-weight: 700;
   font-size: 16px;
+  font-family: inherit;
   line-height: 1.88;
   letter-spacing: 0.06em;
   background-color: var(--secondary-accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  padding: 10px 32px;
+  cursor: pointer;
+  border: 1px solid var(--primary-text-color);
 }
 
 /* -----------------------------------------------ADVANTAGE-------------------------------------------------- */
+
+.advantage-list {
+  display: flex;
+}
+
+.advantage-item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.advantage-item {
+  width: 270px;
+}
 
 .advantage-title {
   color: var(--primary-text-color);
@@ -142,6 +262,8 @@ body {
   line-height: 1.14;
   letter-spacing: 0.03em;
   text-transform: uppercase;
+  padding-top: 94px;
+  margin-bottom: 10px;
 }
 
 .advantage-text {
@@ -157,15 +279,52 @@ body {
   color: var(--primary-text-color);
 }
 
+.activity-job {
+  display: flex;
+}
+
 .activity-title {
   font-weight: 700;
   font-size: 36px;
   line-height: 1.17;
   text-align: center;
   letter-spacing: 0.03em;
+  padding-top: 94px;
+  margin-bottom: 50px;
+}
+
+.activity-item {
+  width: 370px;
+  padding-bottom: 94px;
+}
+
+.activity-item:not(:last-child) {
+  margin-right: 30px;
 }
 
 /* -----------------------------------------------TEAM-------------------------------------------------- */
+
+.team {
+  padding-top: 94px;
+  padding-bottom: 94px;
+  background-color: var(--button-bg-color);
+}
+
+.team-list {
+  display: flex;
+}
+
+.team-item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.team-card {
+  width: 270px;
+  background: var(--primary-white-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0 0 4px 4px;
+}
 
 .team-title {
   font-weight: 700;
@@ -173,6 +332,8 @@ body {
   line-height: 1.17;
   text-align: center;
   letter-spacing: 0.03em;
+
+  margin-bottom: 50px;
 }
 
 .team-name {
@@ -180,6 +341,9 @@ body {
   font-size: 16px;
   line-height: 1.19;
   letter-spacing: 0.03em;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 10px;
 }
 
 .team-text {
@@ -187,9 +351,25 @@ body {
   line-height: 1.19;
   letter-spacing: 0.03em;
   color: var(--secondary-text-color);
+  text-align: center;
+  padding-bottom: 30px;
 }
 
 /* -----------------------------------------------PORTFOLIO-------------------------------------------------- */
+
+.portfolio {
+  padding: 94px 0;
+}
+
+.filter {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.filter .filter-item + .filter-item {
+  margin-left: 8px;
+}
 
 .portfolio-button {
   font-family: 'Roboto', sans-serif;
@@ -201,6 +381,8 @@ body {
   color: var(--primary-text-color);
   background: var(--button-bg-color);
   cursor: pointer;
+  border-radius: 4px;
+  padding: 6px 22px;
 }
 
 .portfolio-button:hover,
@@ -209,12 +391,29 @@ body {
   background: var(--accent-color);
 }
 
+.portfolio-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.portfolio-cards .portfolio-items {
+  background: var(--primary-white-color);
+  border: 1px solid #eeeeee;
+  margin-top: 30px;
+}
+
+.content {
+  padding: 20px 24px;
+}
+
 .portfolio-title {
   font-weight: 700;
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
   color: var(--primary-text-color);
+  margin-bottom: 4px;
 }
 
 .portfolio-text {
@@ -226,12 +425,26 @@ body {
 
 /* -----------------------------------------------FOOTER------------------------------------------------- */
 
+.footer {
+  background-color: var(--footer-bg-color);
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.footer-contacts {
+  width: 231px;
+}
+
+.footer-contacts a {
+  display: block;
+}
+
 .footer-mail {
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: var(--footer-contacts-text-color);
-  background-color: var(--primary-text-color);
+  margin-top: 9px;
 }
 
 .footer-mail:hover,
@@ -244,7 +457,7 @@ body {
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: var(--footer-contacts-text-color);
-  background-color: var(--primary-text-color);
+  margin-top: 9px;
 }
 
 .footer-tel:hover,
@@ -259,5 +472,5 @@ body {
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: var(--primary-white-color);
-  background-color: var(--primary-text-color);
+  margin-top: 20px;
 }
